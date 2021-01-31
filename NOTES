@@ -1,1 +1,1 @@
-ssh-keygen -q -f <Your File Location>/VPC_TF_Project/keys/sshkey -t rsa -N '' -b 4096
+ssh-keygen -q -f <Your File Location>/poc_coalfire/keys/sshkey -t rsa -N '' -b 4096
