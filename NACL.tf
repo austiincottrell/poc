@@ -36,15 +36,3 @@ resource "aws_network_acl" "secure_private_subnet" {
     Name = local.nacl_name
   }
 }
-
-# Could be used for future use when terraform has the ability to associate NACL with subnets
-
-# resource "aws_network_acl_associate" "attaching_acl_2" {
-#     subnet_id      = aws_subnet.subnet[2].id
-#     route_table_id = aws_network_acl.secure_private_subnet.id
-# }
-
-# resource "aws_network_acl_associate" "attaching_acl_3" {
-#     subnet_id      = aws_subnet.subnet[3].id
-#     route_table_id = aws_network_acl.secure_private_subnet.id
-# }
