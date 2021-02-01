@@ -49,7 +49,8 @@ resource "null_resource" "add_key_to_keychain" {
 
 resource "null_resource" "ssh_config_file" {
   provisioner "local-exec" {
-    command = "echo '\nHost bastion-instance \n HostName ${aws_instance.amazonlinux_vm_public.public_ip} \n User ${var.user_os} \n\nHost private-instance \n HostName ${aws_instance.amazonlinux_vm_private.private_ip} \n User ${var.user_os} \n ProxyCommand ssh -q -W %h:%p bastion-instance' >> ${var.home_dir}.ssh/config" 
+    command = "echo '\nHost bastion-instance \n HostName ${aws_instance.amazonlinux_vm_public.public_ip} \n User ${var.user_os} \n\nHost private-instance \n HostName ${aws_instance.amazonlinux_vm_private.private_ip} \n User ${var.user_os} \n ProxyCommand ssh -q -W %h:%p bastion-instance \n' >> ${var.home_dir}.ssh/config" 
+    
     }
 
   depends_on = [aws_instance.amazonlinux_vm_private]
