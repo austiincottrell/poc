@@ -10,7 +10,6 @@ Hello! Check the diagram below to see the architect that will be created above.
 - The download link is above and the ssh-keygen command is in the NOTES file
 
 <h2> Step 2: Create a terraform.tfvars file inside the directory </h2>
-<```>
 
     myip = "Your IP Address/32"
 
