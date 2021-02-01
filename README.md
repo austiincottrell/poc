@@ -3,7 +3,7 @@ Hello! Check the diagram below to see the architect that will be created above.
 
 ![Architecture](https://github.com/quiik/poc_coalfire/blob/main/image.jpg?raw=true)
 
-<p>Resources attached to architecture that is not listed is the security groups and an elastic ip attached to the NAT gateway.</p>
+<p>Resources attached to architecture that is not listed in the diagram are security groups and an elastic ip attached to the NAT gateway.</p>
 
 <h2> Step 1: Download and run ssh-keygen command </h2>
 
@@ -24,4 +24,4 @@ Hello! Check the diagram below to see the architect that will be created above.
 
 <h2> Step 5: Run a terraform apply and watch the infrastructure setup </h2>
 
-<p> Side note: Enjoy!
+<p> Side note: Built and tested on mac os </p>
