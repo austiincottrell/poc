@@ -1,5 +1,6 @@
 resource "aws_vpc" "secure_vpc" {
   enable_dns_support = true
+  enable_dns_hostnames = true
   cidr_block = var.my_cidr_block
 
   tags = {
