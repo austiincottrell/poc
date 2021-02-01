@@ -16,7 +16,6 @@ Hello! Check the diagram below to see the architect that will be created above.
 
     home_dir = "C:/Users/Your Username/"
     
-```
 <h2> Step 3: Open up a terminal and cd to the directory where all the files and keys are </h2>
 
 
