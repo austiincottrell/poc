@@ -13,7 +13,7 @@ variable "public_subnet" {
 }
 
 variable "nacl_ingress_ports" {
-    default = [{"port" = 443, "rule" = 110},{"port" = 80, "rule" = 100}]
+    default = [{"port" = 443, "rule" = 110, "type" = "tcp"},{"port" = 80, "rule" = 100, "type" = "tcp"},{"port" = 22, "rule" = 120, "type" = "tcp"},{"port" = 0, "rule" = 150, "type" = "-1"}]
 }
 
 variable "instance_type" {
