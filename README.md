@@ -56,5 +56,5 @@ Hello! Check the diagram below to see the architect that will be created above.
     sudo systemctl start httpd
     sudo systemctl enable httpd
     
-    
+   
 <p> Side note: Built and tested on mac os </p>
