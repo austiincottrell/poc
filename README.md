@@ -40,4 +40,21 @@ Hello! Check the diagram below to see the architect that will be created above.
 
     ssh private-instance    
 
+<h2> Step 8: Run the script to install/configure httpd </h2>
+
+
+    #!/bin/bash
+    sudo yum update -y
+    sudo yum install httpd -y
+    echo '<h1> Hello Coalfire from Austin! </h1>' > /var/www/html/html.index
+    echo '<virtualhost *:80> 
+    servername www.poctest.com 
+    serveradmin root@<Private IP>
+    documentroot /var/www/html/ 
+    </virtualhost>' > /etc/httpd/conf.d/mytest.conf
+    echo '<Private IP> www.poctest.com' >> /etc/hosts
+    sudo systemctl start httpd
+    sudo systemctl enable httpd
+    
+    
 <p> Side note: Built and tested on mac os </p>
