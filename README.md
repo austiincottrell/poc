@@ -61,10 +61,10 @@ Host private-instance <br>
     echo "Hello Coalfire from Austin!" > /var/www/html/html.index
     echo '<virtualhost *:80> 
     servername www.poctest.com 
-    serveradmin root@10-0-1-79
+    serveradmin root@YOUR PRIVATE IP
     documentroot /var/www/html/ 
     </virtualhost>' > /etc/httpd/conf.d/mytest.conf
-    echo '10-0-1-79 www.poctest.com' >> /etc/hosts
+    echo 'YOUR PRIVATE IP www.poctest.com' >> /etc/hosts
     sudo systemctl start httpd
     sudo systemctl enable httpd
     
