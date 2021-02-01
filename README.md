@@ -57,14 +57,13 @@ Host private-instance <br>
     #!/bin/bash
     sudo yum update -y
     sudo yum install httpd -y
-    sudo touch var/www/html/html.index
     echo "Hello Coalfire from Austin!" > /var/www/html/html.index
-    sudo echo '<virtualhost *:80> 
+    echo '<virtualhost *:80> 
     servername www.poctest.com 
-    serveradmin root@<Private IP>
+    serveradmin root@10-0-1-79
     documentroot /var/www/html/ 
     </virtualhost>' > /etc/httpd/conf.d/mytest.conf
-    sudo echo '<Private IP> www.poctest.com' >> /etc/hosts
+    echo '10-0-1-79 www.poctest.com' >> /etc/hosts
     sudo systemctl start httpd
     sudo systemctl enable httpd
     
