@@ -23,6 +23,26 @@ resource "aws_security_group" "pub_vm" {
 
 resource "aws_security_group" "private_web_server" {
     vpc_id = aws_vpc.secure_vpc.id
+    
+    dynamic "ingress" {
+    for_each = var.private_ingress_ports
+    content {
+        from_port   = ingress.value
+        to_port     = ingress.value
+        protocol    = "tcp"
+        cidr_blocks = [var.my_cidr_block]
+        }
+    }
+
+    dynamic "ingress" {
+    for_each = var.public_ingress_ports
+    content {
+        from_port   = ingress.value
+        to_port     = ingress.value
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+        }
+    }
 
     ingress {
     description = "http traffic from ALB"
@@ -30,14 +50,6 @@ resource "aws_security_group" "private_web_server" {
     to_port     = 80
     protocol    = "tcp"
     security_groups = [aws_security_group.ALB_security_group.id]
-    }
-
-    ingress {
-    description = "SSH from an aws instance"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = [var.my_cidr_block]
     }
 
     egress {
