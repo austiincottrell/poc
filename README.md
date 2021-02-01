@@ -55,6 +55,8 @@ Host private-instance <br>
 
 ***Run in Root***
 
+<p>Change the Private IP Adress to the output value given from the terraform apply</p>
+
     #!/bin/bash
     sudo yum update -y
     sudo yum install httpd -y
