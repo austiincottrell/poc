@@ -4,7 +4,7 @@ resource "aws_key_pair" "sshkey" {
 }
 
 resource "aws_instance" "amazonlinux_vm_public" {
-  ami = data.aws_ami.rhel7_5.id
+  ami = data.aws_ami.rhel8.id
   instance_type = var.instance_type
   key_name = aws_key_pair.sshkey.key_name
   subnet_id = aws_subnet.subnet[1].id
@@ -19,7 +19,7 @@ resource "aws_instance" "amazonlinux_vm_public" {
 }
 
 resource "aws_instance" "amazonlinux_vm_private" {
-  ami = data.aws_ami.rhel7_5.id
+  ami = data.aws_ami.rhel8.id
   instance_type = var.instance_type
   key_name = aws_key_pair.sshkey.key_name
   subnet_id = aws_subnet.subnet[3].id
