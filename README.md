@@ -42,14 +42,14 @@ Hello! Check the diagram below to see the architect that will be created above.
 
 - if you see an error from the bastion command check the .ssh/config file and make sure it looks like this:
     
-<p>Host bastion-instance <br></p>
-<p> HostName 34.201.171.10 <br></p>
-<p> User ec2-user <br></p>
+<p>Host bastion-instance <br>
+ HostName 34.201.171.10 <br>
+ User ec2-user <br>
 
-<p>Host private-instance <br></p>
-<p> HostName 10.0.3.247 <br></p>
-<p> User ec2-user <br></p>
-<p> ProxyCommand ssh -q -W %h:%p bastion-instance <br></p>
+Host private-instance <br>
+ HostName 10.0.3.247 <br>
+ User ec2-user <br>
+ ProxyCommand ssh -q -W %h:%p bastion-instance <br></p>
   
 <h2> Step 8: Run the script to install/configure httpd </h2>
 
