@@ -53,6 +53,7 @@ Host private-instance <br>
   
 <h2> Step 8: Run the script to install/configure httpd </h2>
 
+***Run in Root***
 
     #!/bin/bash
     sudo yum update -y
