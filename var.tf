@@ -16,6 +16,18 @@ variable "nacl_ingress_ports" {
     default = [{"port" = 443, "rule" = 110, "type" = "tcp"},{"port" = 80, "rule" = 100, "type" = "tcp"},{"port" = 22, "rule" = 120, "type" = "tcp"},{"port" = 0, "rule" = 150, "type" = "-1"}]
 }
 
+variable "nacl_server_ingress_ports" {
+    default = [{"port" = 443,"rule" = 130, "type" = "tcp"},{"port" = 80,"rule" = 140, "type" = "tcp"}]
+}
+
+variable "public_ingress_ports" {
+    default = [80,443]
+}
+
+variable "private_ingress_ports" {
+    default = [80,443,22]
+}
+
 variable "instance_type" {
     default = "t2.micro"
 }
