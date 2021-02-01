@@ -7,25 +7,16 @@ resource "aws_network_acl" "secure_private_subnet" {
     content {
       from_port  = ingress.value["port"]
       to_port    = ingress.value["port"]
-      protocol   = "tcp"
+      protocol   = ingress.value["type"]
       action     = "allow"
       cidr_block = var.my_cidr_block
       rule_no    = ingress.value["rule"]
     }
   }
 
-  ingress {
-    protocol   = "tcp"
-    rule_no    = 120
-    action     = "allow"
-    cidr_block = var.myip
-    from_port  = 22
-    to_port    = 22
-  }
-
   egress {
-    protocol   = "tcp"
-    rule_no    = 200
+    protocol   = "-1"
+    rule_no    = 100
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 0
