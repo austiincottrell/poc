@@ -57,7 +57,8 @@ Host private-instance <br>
     #!/bin/bash
     sudo yum update -y
     sudo yum install httpd -y
-    sudo echo "Hello Coalfire from Austin!" > /var/www/html/html.index
+    sudo touch html.index
+    echo "Hello Coalfire from Austin!" > /var/www/html/html.index
     sudo echo '<virtualhost *:80> 
     servername www.poctest.com 
     serveradmin root@<Private IP>
