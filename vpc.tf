@@ -13,7 +13,7 @@ resource "aws_subnet" "subnet" {
   map_public_ip_on_launch = element(var.public_subnet, count.index)
   count                   = 4
 
-  availability_zone = data.aws_availability_zones.available.names[count.index]
+  availability_zone = random_shuffle.az.result[count.index]
   cidr_block        = cidrsubnet(var.my_cidr_block, 8, count.index)
 
   tags = {
@@ -24,4 +24,9 @@ resource "aws_subnet" "subnet" {
 
 resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.secure_vpc.id
+}
+
+resource "random_shuffle" "az" {
+  input = data.aws_availability_zones.available.names
+  result_count = 4
 }
