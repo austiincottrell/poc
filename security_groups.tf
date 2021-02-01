@@ -34,8 +34,8 @@ resource "aws_security_group" "private_web_server" {
 
     ingress {
     description = "SSH from an aws instance"
-    from_port   = 22
-    to_port     = 22
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [var.my_cidr_block]
     }
