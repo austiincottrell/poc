@@ -11,9 +11,11 @@ Hello! Check the diagram below to see the architect that will be created above.
 
 <h2> Step 2: Create a terraform.tfvars file inside the directory </h2>
 ```
-myip = "Your IP Address/32"
 
-home_dir = "C:/Users/Your Username/"
+    myip = "Your IP Address/32"
+
+    home_dir = "C:/Users/Your Username/"
+    
 ```
 <h2> Step 3: Open up a terminal and cd to the directory where all the files and keys are </h2>
 
