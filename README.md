@@ -29,6 +29,11 @@ Hello! Check the diagram below to see the architect that will be created above.
 <h2> Step 5: Run a terraform init and double check with a terraform plan to make sure that the values above are put in correctly </h2>
 
 
+    terraform init
+    
+    terraform plan
+
+
 <h2> Step 6: Run a terraform apply and watch the infrastructure setup </h2>
 
 <p> Side note: Built and tested on mac os </p>
