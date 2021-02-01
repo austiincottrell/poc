@@ -30,6 +30,8 @@ resource "aws_eip" "nat_gw_eip" {
 resource "aws_nat_gateway" "nat_gw" {
   allocation_id = aws_eip.nat_gw_eip.id
   subnet_id     = aws_subnet.subnet[0].id
+  
+  depends_on = [aws_internet_gateway.internet_gateway]
 }
 
 #====================================================
