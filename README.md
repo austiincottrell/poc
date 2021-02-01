@@ -9,7 +9,7 @@ Hello! Check the diagram below to see the architect that will be created above.
 
 - The download link is above
 
-<h2> Step 2: Run ssh-keygen command
+<h2> Step 2: Run ssh-keygen command </h2>
     
     
     ssh-keygen -q -f <Your File Location>/poc_coalfire/keys/sshkey -t rsa -N '' -b 4096
