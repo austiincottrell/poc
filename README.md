@@ -16,8 +16,9 @@ Hello! Check the diagram below to see the architect that will be created above.
 
     home_dir = "C:/Users/<Your Username>/"
     
-<h2> Step 3: Open up a terminal and cd to the directory where all the files and keys are </h2>
+<h2> Step 3: Open up a terminal and go to the repo where all the files are </h2>
 
+    $ ~/poc_coalfire
 
 <h2> Step 4: Run a terraform init and double check with a terraform plan to make sure that the values above are put in correctly </h2>
 
