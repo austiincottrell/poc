@@ -34,16 +34,6 @@ resource "aws_security_group" "private_web_server" {
         }
     }
 
-    dynamic "ingress" {
-    for_each = var.public_ingress_ports
-    content {
-        from_port   = ingress.value
-        to_port     = ingress.value
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-        }
-    }
-
     ingress {
     description = "http traffic from ALB"
     from_port   = 80
