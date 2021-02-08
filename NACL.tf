@@ -15,10 +15,10 @@ resource "aws_network_acl" "secure_private_subnet" {
   }
 
   dynamic "ingress" {
-    for_each = var.nacl_server_ingress_ports
+    for_each = var.nacl_ingress_ports_2
     content {
       from_port  = ingress.value["port"]
-      to_port    = ingress.value["port"]
+      to_port    = ingress.value["port2"]
       protocol   = ingress.value["type"]
       action     = "allow"
       cidr_block = "0.0.0.0/0"
