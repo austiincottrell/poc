@@ -55,7 +55,7 @@ Host private-instance <br>
 
 ***Run in Root***
 
-<p>Change the Private IP Adress to the output value given from the terraform apply</p>
+<p>Add this to a file and chmod +x. Run the bash script and you are good to go!</p>
 
     #!/bin/bash
     sudo yum update -y
