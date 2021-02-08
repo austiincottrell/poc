@@ -13,15 +13,11 @@ variable "public_subnet" {
 }
 
 variable "nacl_ingress_ports" {
-    default = [{"port" = 443, "rule" = 110, "type" = "tcp"},{"port" = 80, "rule" = 100, "type" = "tcp"},{"port" = 22, "rule" = 120, "type" = "tcp"},{"port" = 0, "rule" = 150, "type" = "-1"}]
+    default = [{"port" = 22, "rule" = 120, "type" = "tcp"}]
 }
 
-variable "nacl_server_ingress_ports" {
-    default = [{"port" = 443,"rule" = 130, "type" = "tcp"},{"port" = 80,"rule" = 140, "type" = "tcp"}]
-}
-
-variable "public_ingress_ports" {
-    default = [80,443]
+variable "nacl_ingress_ports_2" {
+    default = [{"port" = 443, "port2" = 443, "rule" = 110, "type" = "tcp"},{"port" = 80, "port2" = 80,"rule" = 100, "type" = "tcp"},{"port" = 32768, "port2" = 65535, "rule" = 130, "type" = "tcp"}]
 }
 
 variable "private_ingress_ports" {
