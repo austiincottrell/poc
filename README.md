@@ -67,6 +67,7 @@ Host private-instance <br>
     documentroot /var/www/html
     </virtualhost>' > /etc/httpd/conf.d/mytest.conf
     echo '127.0.0.1 www.poctest.com' >> /etc/hosts
+    rm /etc/httpd/conf.d/welcome.conf
     sudo systemctl start httpd
     sudo systemctl enable httpd
     
